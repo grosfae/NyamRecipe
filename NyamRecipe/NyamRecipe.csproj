@@ -152,6 +152,7 @@
     <None Include="Components\Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+    <None Include="DataBaseRes\TP_NyamNyam_StyleGuide_Rus.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -176,6 +177,17 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="DataBaseRes\Logo.jpg" />
+    <Content Include="DataBaseRes\NyamRecipes.sql" />
+    <Resource Include="DataBaseRes\блюда\1bf34824-b49f-48df-b232-34640f317804.jpg" />
+    <Resource Include="DataBaseRes\блюда\8fa8e08e-30ae-4a9b-9eab-23b5f175ac2b.jpg" />
+    <Resource Include="DataBaseRes\блюда\b0344ec5-b9d0-47e0-b63d-a060308544e6.jpg" />
+    <Resource Include="DataBaseRes\блюда\f417875e-3919-4231-a539-1c8a50f79b79.jpg" />
+    <Resource Include="DataBaseRes\блюда\fc550bc8-c9fe-476d-b432-726e9d7043c2.jpg" />
+    <Resource Include="DataBaseRes\Добавить.jpg" />
+    <Resource Include="DataBaseRes\Рецепт.jpg" />
+    <Resource Include="DataBaseRes\Список блюд.jpg" />
+    <Resource Include="DataBaseRes\Список ингредиентов.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
