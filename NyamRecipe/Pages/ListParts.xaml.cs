@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NyamRecipe.Components.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,8 +25,12 @@ namespace NyamRecipe.Pages
         {
             InitializeComponent();
             TbCounter.Text = App.DB.Ingredient.Count().ToString();
-            DtGreedient.ItemsSource = App.DB.Ingredient.ToList();
+            Update();
+            LblPages.Content = numberLb;
         }
+        int numberLb = 1;
+        int numberPage = 0;
+        int count = 5;
 
         private void LinkEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -44,17 +49,37 @@ namespace NyamRecipe.Pages
 
         private void BtnPreviousPage_Click(object sender, RoutedEventArgs e)
         {
-
+            numberPage--;
+            if (numberPage < 0)
+                numberPage = 0;
+            Update();
+            if (numberPage != 0)
+            {
+                LblPages.Content = numberLb - 1;
+            }
         }
 
         private void BtnNextPage_Click(object sender, RoutedEventArgs e)
         {
-
+            numberPage++;
+            if (DtGreedient.Items.Count < 5)
+                numberPage--;
+            Update();
+            if (numberPage < 4)
+            {
+                LblPages.Content = numberLb + 1;
+            }
         }
 
         private void BtnLastPage_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void Update()
+        {
+            IEnumerable<Ingredient> partsList = App.DB.Ingredient;
+            partsList = partsList.Skip(count * numberPage).Take(count);
+            DtGreedient.ItemsSource = partsList;
         }
     }
 }

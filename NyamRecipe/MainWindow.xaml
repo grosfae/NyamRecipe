@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:NyamRecipe"
         mc:Ignorable="d"
         Icon="Resources/Logo.jpg"
-        Title="Мои рецепты" Height="500" Width="900" ResizeMode="CanMinimize">
+        Title="Мои рецепты" Height="550" Width="900" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="110"/>
@@ -19,7 +19,7 @@
             <StackPanel Margin="0 10 0 0">
                 <Button x:Name="DishesBtn" Content="Блюда" Style="{StaticResource MenuBtn}" Click="DishesBtn_Click"/>
                 <Button x:Name="ComponentsBtn" Content="Ингредиенты" Style="{StaticResource MenuBtn}" Click="ComponentsBtn_Click" Margin="0 10 0 0"/>
-                <Button x:Name="ExitBtn" Content="Выход" Style="{StaticResource MenuBtn}" Click="ExitBtn_Click" Margin="0 260 0 0"/>
+                <Button x:Name="ExitBtn" Content="Выход" Style="{StaticResource MenuBtn}" Click="ExitBtn_Click" Margin="0 320 0 0"/>
             </StackPanel>
         </StackPanel>
 
