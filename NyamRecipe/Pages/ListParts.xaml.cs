@@ -26,14 +26,15 @@ namespace NyamRecipe.Pages
             InitializeComponent();
             TbCounter.Text = App.DB.Ingredient.Count().ToString();
             Update();
-            LblPages.Content = numberLb;
+            LblPages.Content = "1/6";
         }
-        int numberLb = 1;
         int numberPage = 0;
         int count = 5;
 
         private void LinkEdit_Click(object sender, RoutedEventArgs e)
         {
+            var selectedItem = (sender as Hyperlink).DataContext as Ingredient;
+            NavigationService.Navigate(new AddEditPart(selectedItem));
 
         }
 
@@ -53,9 +54,29 @@ namespace NyamRecipe.Pages
             if (numberPage < 0)
                 numberPage = 0;
             Update();
-            if (numberPage != 0)
+            if (numberPage == 0)
             {
-                LblPages.Content = numberLb - 1;
+                LblPages.Content = "1/6";
+            }
+            else if (numberPage == 1)
+            {
+                LblPages.Content = "2/6";
+            }
+            else if (numberPage == 2)
+            {
+                LblPages.Content = "3/6";
+            }
+            else if (numberPage == 3)
+            {
+                LblPages.Content = "4/6";
+            }
+            else if (numberPage == 4)
+            {
+                LblPages.Content = "5/6";
+            }
+            else if (numberPage == 5)
+            {
+                LblPages.Content = "6/6";
             }
         }
 
@@ -65,9 +86,29 @@ namespace NyamRecipe.Pages
             if (DtGreedient.Items.Count < 5)
                 numberPage--;
             Update();
-            if (numberPage < 4)
+            if (numberPage == 0)
             {
-                LblPages.Content = numberLb + 1;
+                LblPages.Content = "1/6";
+            }
+            else if (numberPage == 1)
+            {
+                LblPages.Content = "2/6";
+            }
+            else if (numberPage == 2)
+            {
+                LblPages.Content = "3/6";
+            }
+            else if (numberPage == 3)
+            {
+                LblPages.Content = "4/6";
+            }
+            else if (numberPage == 4)
+            {
+                LblPages.Content = "5/6";
+            }
+            else if (numberPage == 5)
+            {
+                LblPages.Content = "6/6";
             }
         }
 
@@ -80,6 +121,11 @@ namespace NyamRecipe.Pages
             IEnumerable<Ingredient> partsList = App.DB.Ingredient;
             partsList = partsList.Skip(count * numberPage).Take(count);
             DtGreedient.ItemsSource = partsList;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -51,18 +51,17 @@
             <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                 <TextBlock x:Name="TbCounter" FontSize="16"/>
                 <TextBlock Text=" наименований" FontSize="16"/>
-                <TextBlock Text="Наименование:" Margin="30 0 0 0"  FontSize="16"/>
-                <TextBox x:Name="TbSearh" Width="110" Margin="5 0 0 0" Height="24"  FontSize="16"/>
-                <TextBlock Margin="110 0 0 0" Text="Запасов в холодильнике на сумму (руб.): "/>
-                <TextBlock x:Name="TbFoodSumm"/>
+
+                <TextBlock Margin="280 0 0 0" FontSize="16" Text="Запасов в холодильнике на сумму (руб.): "/>
+                <TextBlock x:Name="TbFoodSumm" Text="{Binding ServicePrice}"/>
             </StackPanel>
-            <DataGrid x:Name="DtGreedient" Height="360" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*" ColumnHeaderStyle="{DynamicResource DatePartsColumns}">
+            <DataGrid x:Name="DtGreedient" Height="360" AutoGenerateColumns="False" ColumnWidth="*"  ColumnHeaderStyle="{DynamicResource DatePartsColumns}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Наименование ингридиента" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Наименование ингридиента" Binding="{Binding Name}" />
                     <DataGridTextColumn Header="Цена">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="{x:Type DataGridCell}">
-                                <Setter Property="Background" Value="{Binding PriceColor}"/>
+                                <Setter Property="Background" Value="{Binding PriceColor}" />
                             </Style>
                         </DataGridTextColumn.CellStyle>
                         <DataGridTextColumn.Binding>
@@ -99,6 +98,7 @@
                 <Label x:Name="LblPages" VerticalAlignment="Center" FontSize="16" Height="30" Width="50" Margin="10 0 10 0"/>
                 <Button Style="{StaticResource MenuBtn}" Width="30" x:Name="BtnNextPage" Click="BtnNextPage_Click" Content="&gt;"/>
                 <Button Margin="5 0 0 0" Style="{StaticResource MenuBtn}" Width="30" x:Name="BtnLastPage" Click="BtnLastPage_Click" Content="&gt;&gt;"/>
+                <Button Width="30" Height="30" Margin="550 0 0 0" Content="+" FontSize="18" Background="#FFEDD4FF" Style="{StaticResource PinkBtn}" Click="Button_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -24,7 +24,7 @@
             <ListView Height="380" x:Name="LvDishes">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel Width="760">
+                        <WrapPanel Width="720">
                             
                         </WrapPanel>
                     </ItemsPanelTemplate>
