@@ -27,6 +27,48 @@ namespace NyamRecipe.Pages
             InitializeComponent();
             contextIngridient = ingredient;
             DataContext = contextIngridient;
+            CbUnit.ItemsSource = App.DB.Unit.ToList();
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string errorMessage = "";
+            if (string.IsNullOrWhiteSpace(contextIngridient.Name))
+            {
+                errorMessage += "Введите название\n";
+            }
+            if (contextIngridient.Cost <= 0)
+            {
+                errorMessage += "Введите корректную цену\n";
+            }
+            if (contextIngridient.CostForCount <= 0 )
+            {
+                errorMessage += "Выберите количество\n";
+            }
+            if (contextIngridient.Unit == null)
+            {
+                errorMessage += "Выберите единицу измерения\n";
+            }
+            if (contextIngridient.CostForCount < 0)
+            {
+                errorMessage += "Выберите количество в холодильнике\n";
+            }
+            if (string.IsNullOrWhiteSpace(errorMessage) == false)
+            {
+                MessageBox.Show(errorMessage);
+                return;
+            }
+            if (contextIngridient.Id == 0)
+            {
+                App.DB.Ingredient.Add(contextIngridient);
+            }
+            App.DB.SaveChanges();
+            NavigationService.GoBack();
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

@@ -83,7 +83,7 @@
                     <DataGridTemplateColumn Header="Действия">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Background="{Binding PriceColor}">
+                                <StackPanel>
                                     <TextBlock Margin="10 10 0 2"><Hyperlink Foreground="Blue" x:Name="LinkEdit" Click="LinkEdit_Click"><Run Text="Редактировать"/></Hyperlink></TextBlock>
                                     <TextBlock Margin="10 2 0 10"><Hyperlink Foreground="Red" x:Name="LinkDelete" Click="LinkDelete_Click"><Run Text="Удалить"/></Hyperlink></TextBlock>
                                 </StackPanel>
@@ -98,7 +98,7 @@
                 <Label x:Name="LblPages" VerticalAlignment="Center" FontSize="16" Height="30" Width="50" Margin="10 0 10 0"/>
                 <Button Style="{StaticResource MenuBtn}" Width="30" x:Name="BtnNextPage" Click="BtnNextPage_Click" Content="&gt;"/>
                 <Button Margin="5 0 0 0" Style="{StaticResource MenuBtn}" Width="30" x:Name="BtnLastPage" Click="BtnLastPage_Click" Content="&gt;&gt;"/>
-                <Button Width="30" Height="30" Margin="550 0 0 0" Content="+" FontSize="18" Background="#FFEDD4FF" Style="{StaticResource PinkBtn}" Click="Button_Click"/>
+                <Button Width="30" Height="30" Margin="550 0 0 0" Content="+" FontSize="18" Background="#FFEDD4FF" Style="{StaticResource PinkBtn}" FontWeight="Bold" Click="Button_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

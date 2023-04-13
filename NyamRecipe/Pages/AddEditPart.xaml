@@ -12,10 +12,27 @@
         <StackPanel Margin="10 0 10 0">
             <TextBlock Text="Добавить ингредиент" FontSize="33"/>
             <Line Stroke="#FFFEAF4A" StrokeThickness="15" X1="0" X2="800"/>
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 50 0 0" Width="450">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Наименование"/>
-                    <TextBox Text="{Binding Name}"/>
+                    <TextBlock Text="Наименование: " FontSize="20" Margin="17 0 0 0"/>
+                    <TextBox Text="{Binding Name}" Width="250" FontSize="17"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                    <TextBlock Text="Цена (руб.): " FontSize="20" Margin="54 0 0 0"/>
+                    <TextBox Text="{Binding Cost}" Width="250" FontSize="17"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                    <TextBlock Text="За количество: " FontSize="20" Margin="20 0 0 0"/>
+                    <TextBox Text="{Binding CostForCount}" Width="60" FontSize="17"/>
+                    <ComboBox x:Name="CbUnit" Width="70" Margin="20 0 0 0" SelectedItem="{Binding Unit}" DisplayMemberPath="Name"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0" >
+                    <TextBlock Text="В холодильнике: " FontSize="20" Margin="0 0 0 0"/>
+                    <TextBox Text="{Binding AvailableCount}" FontSize="17" Width="60" Margin="0 0 0 0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 60 0 0" HorizontalAlignment="Center">
+                    <Button x:Name="SaveBtn" Style="{StaticResource MenuBtn}" Width="120" Height="30" Content="Добавить" FontSize="17" Click="SaveBtn_Click"/>
+                    <Button x:Name="CancelBtn" Style="{StaticResource MenuBtn}" Width="120" Height="30" Content="Отменить" FontSize="17" Margin="10 0 0 0" Click="CancelBtn_Click"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
