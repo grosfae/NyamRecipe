@@ -48,7 +48,7 @@ namespace NyamRecipe.Pages
 
         private void LinkDelete_Click(object sender, RoutedEventArgs e)
         {
-            string a;
+            
         }
 
         private void BtnFirstPage_Click(object sender, RoutedEventArgs e)
