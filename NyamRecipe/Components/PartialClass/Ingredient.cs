@@ -26,5 +26,12 @@ namespace NyamRecipe.Components.Model
                 }
             }
         }
+        public double Price
+        {
+            get
+            {
+                return (double)Cost / CostForCount;
+            }
+        }
     }
 }

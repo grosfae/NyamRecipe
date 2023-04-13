@@ -7,7 +7,7 @@
       xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="NyamRecipe.Pages.ListParts"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="800"
-      Title="ListParts">
+      Title="ListParts" Loaded="Page_Loaded">
 
     <Page.Resources>
         <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
@@ -52,8 +52,7 @@
                 <TextBlock x:Name="TbCounter" FontSize="16"/>
                 <TextBlock Text=" наименований" FontSize="16"/>
 
-                <TextBlock Margin="280 0 0 0" FontSize="16" Text="Запасов в холодильнике на сумму (руб.): "/>
-                <TextBlock x:Name="TbFoodSumm" Text="{Binding ServicePrice}"/>
+                <TextBlock x:Name="TbFoodSumm" Margin="320 0 0 0"/>
             </StackPanel>
             <DataGrid x:Name="DtGreedient" Height="360" AutoGenerateColumns="False" ColumnWidth="*"  ColumnHeaderStyle="{DynamicResource DatePartsColumns}">
                 <DataGrid.Columns>
@@ -98,7 +97,11 @@
                 <Label x:Name="LblPages" VerticalAlignment="Center" FontSize="16" Height="30" Width="50" Margin="10 0 10 0"/>
                 <Button Style="{StaticResource MenuBtn}" Width="30" x:Name="BtnNextPage" Click="BtnNextPage_Click" Content="&gt;"/>
                 <Button Margin="5 0 0 0" Style="{StaticResource MenuBtn}" Width="30" x:Name="BtnLastPage" Click="BtnLastPage_Click" Content="&gt;&gt;"/>
-                <Button Width="30" Height="30" Margin="550 0 0 0" Content="+" FontSize="18" Background="#FFEDD4FF" Style="{StaticResource PinkBtn}" FontWeight="Bold" Click="Button_Click"/>
+                <StackPanel Margin="20 0 0 0" x:Name="SPanelPages" Orientation="Horizontal">
+                    
+                </StackPanel>
+                <Button Width="30" Height="30" Margin="50 0 0 0" Content="+" FontSize="18" Background="#FFEDD4FF" Style="{StaticResource PinkBtn}" FontWeight="Bold" Click="Button_Click"/>
+                
             </StackPanel>
         </StackPanel>
     </Grid>
