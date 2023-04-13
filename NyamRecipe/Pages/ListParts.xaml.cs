@@ -31,7 +31,7 @@ namespace NyamRecipe.Pages
             LblPages.Content = $"{fakePage}/{maxPage}";
             CalculateSummarydData();
             GeneratePageNumbers();
-
+            
         }
         int numberPage = 0;
         int count = 5;
@@ -48,7 +48,7 @@ namespace NyamRecipe.Pages
 
         private void LinkDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            string a;
         }
 
         private void BtnFirstPage_Click(object sender, RoutedEventArgs e)
