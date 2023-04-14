@@ -127,6 +127,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RecipePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AddEditPart.xaml.cs">
@@ -137,6 +141,9 @@
     </Compile>
     <Compile Include="Pages\ListParts.xaml.cs">
       <DependentUpon>ListParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RecipePage.xaml.cs">
+      <DependentUpon>RecipePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

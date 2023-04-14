@@ -24,9 +24,9 @@ namespace NyamRecipe.Pages
         public ListParts()
         {
             InitializeComponent();
-            if (maxPage * 5 < App.DB.Ingredient.Count())
+            if (maxPage * 5 < App.DB.Ingredient.Where(x => x.IsDelete != true).Count())
                 maxPage += 1;
-            TbCounter.Text = App.DB.Ingredient.Count().ToString();
+            TbCounter.Text = App.DB.Ingredient.Where(x => x.IsDelete != true).Count().ToString();
             Update();
             LblPages.Content = $"{fakePage}/{maxPage}";
             CalculateSummarydData();
@@ -34,8 +34,8 @@ namespace NyamRecipe.Pages
             
         }
         int numberPage = 0;
-        int count = 5;
-        int maxPage = App.DB.Ingredient.Count() / 5;
+        int count = 4;
+        int maxPage = App.DB.Ingredient.Where(x => x.IsDelete != true).Count() / 5;
         int fakePage = 1;
         int ButtonPage;
         
@@ -48,6 +48,9 @@ namespace NyamRecipe.Pages
 
         private void LinkDelete_Click(object sender, RoutedEventArgs e)
         {
+            var selectedItem = (sender as Hyperlink).DataContext as Ingredient;
+            selectedItem.IsDelete = true;
+            App.DB.SaveChanges();
             
         }
 
@@ -104,7 +107,7 @@ namespace NyamRecipe.Pages
                 fakePage = maxPage;
             }
                 
-            IEnumerable<Ingredient> partsList = App.DB.Ingredient;
+            IEnumerable<Ingredient> partsList = App.DB.Ingredient.Where(x => x.IsDelete != true);
             partsList = partsList.Skip(count * numberPage).Take(count);
             DtGreedient.ItemsSource = partsList;
         }
@@ -115,7 +118,7 @@ namespace NyamRecipe.Pages
         }
         public void CalculateSummarydData()
         {
-            IEnumerable<Ingredient> listIngredients = App.DB.Ingredient;
+            IEnumerable<Ingredient> listIngredients = App.DB.Ingredient.Where(x => x.IsDelete != true);
             double sum = listIngredients.Sum(x => x.Price * x.AvailableCount);
             TbFoodSumm.Text = $"Запасов в холодильнике на сумму: {sum:N2} Руб.";
         }

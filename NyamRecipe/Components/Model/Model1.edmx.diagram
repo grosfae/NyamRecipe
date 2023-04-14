@@ -5,18 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0e7380188ec6462faf3b8a4e425aafd0" Name="Diagram1">
-        <EntityTypeShape EntityType="NyamRecipesModel.Category" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NyamRecipesModel.CookingStage" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NyamRecipesModel.Dish" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="NyamRecipesModel.Ingredient" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NyamRecipesModel.IngredientOfStage" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NyamRecipesModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NyamRecipesModel.Unit" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="NyamRecipesModel.FK_Dish_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="NyamRecipesModel.FK_CookingStage_Dish" ManuallyRouted="false" />
-        <AssociationConnector Association="NyamRecipesModel.FK_IngredientOfStage_CookingStage" ManuallyRouted="false" />
-        <AssociationConnector Association="NyamRecipesModel.FK_Ingredient_Unit" ManuallyRouted="false" />
-        <AssociationConnector Association="NyamRecipesModel.FK_IngredientOfStage_Ingredient" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NyamRecipesModel.Category" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="NyamRecipesModel.CookingStage" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="NyamRecipesModel.Dish" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="NyamRecipesModel.Ingredient" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="NyamRecipesModel.IngredientOfStage" Width="1.5" PointX="7.5" PointY="1.375" />
+        <EntityTypeShape EntityType="NyamRecipesModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NyamRecipesModel.Unit" Width="1.5" PointX="3" PointY="5.5" />
+        <AssociationConnector Association="NyamRecipesModel.FK_Dish_Category" />
+        <AssociationConnector Association="NyamRecipesModel.FK_CookingStage_Dish" />
+        <AssociationConnector Association="NyamRecipesModel.FK_IngredientOfStage_CookingStage" />
+        <AssociationConnector Association="NyamRecipesModel.FK_Ingredient_Unit" />
+        <AssociationConnector Association="NyamRecipesModel.FK_IngredientOfStage_Ingredient" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

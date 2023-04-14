@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -49,9 +50,9 @@ namespace NyamRecipe.Pages
             {
                 errorMessage += "Выберите единицу измерения\n";
             }
-            if (contextIngridient.CostForCount < 0)
+            if (contextIngridient.CostForCount <= 0)
             {
-                errorMessage += "Выберите количество в холодильнике\n";
+                errorMessage += "Выберите корректное количество в холодильнике\n";
             }
             if (string.IsNullOrWhiteSpace(errorMessage) == false)
             {
@@ -69,6 +70,22 @@ namespace NyamRecipe.Pages
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void TextBox_PreviewText(object sender, TextCompositionEventArgs e)
+        {
+            if (Regex.IsMatch(e.Text, @"[0-9]") == false)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextBox_PreviewTextInputABC(object sender, TextCompositionEventArgs e)
+        {
+            if (Regex.IsMatch(e.Text, @"[A-zА-я,]") == false)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

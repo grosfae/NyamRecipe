@@ -15,20 +15,20 @@
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 50 0 0" Width="450">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Наименование: " FontSize="20" Margin="17 0 0 0"/>
-                    <TextBox Text="{Binding Name}" Width="250" FontSize="17"/>
+                    <TextBox Text="{Binding Name}" Width="250" FontSize="17" PreviewTextInput="TextBox_PreviewTextInputABC" MaxLength="20" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <TextBlock Text="Цена (руб.): " FontSize="20" Margin="54 0 0 0"/>
-                    <TextBox Text="{Binding Cost}" Width="250" FontSize="17"/>
+                    <TextBox Text="{Binding Cost}" Width="250" FontSize="17" PreviewTextInput="TextBox_PreviewText" MaxLength="5"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <TextBlock Text="За количество: " FontSize="20" Margin="20 0 0 0"/>
-                    <TextBox Text="{Binding CostForCount}" Width="60" FontSize="17"/>
+                    <TextBox Text="{Binding CostForCount}" Width="60" FontSize="17"  PreviewTextInput="TextBox_PreviewText"/>
                     <ComboBox x:Name="CbUnit" Width="70" Margin="20 0 0 0" SelectedItem="{Binding Unit}" DisplayMemberPath="Name"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 20 0 0" >
                     <TextBlock Text="В холодильнике: " FontSize="20" Margin="0 0 0 0"/>
-                    <TextBox Text="{Binding AvailableCount}" FontSize="17" Width="60" Margin="0 0 0 0"/>
+                    <TextBox Text="{Binding AvailableCount}" FontSize="17" Width="60" Margin="0 0 0 0"  PreviewTextInput="TextBox_PreviewText" MaxLength="3"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 60 0 0" HorizontalAlignment="Center">
                     <Button x:Name="SaveBtn" Style="{StaticResource MenuBtn}" Width="120" Height="30" Content="Добавить" FontSize="17" Click="SaveBtn_Click"/>
